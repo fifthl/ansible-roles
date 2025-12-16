@@ -1,0 +1,8 @@
+---
+- name: Deploy Nginx and PHP
+  hosts: webServer
+  user: root
+
+  roles:
+  - role: php
+  - role: nginx 

@@ -1,0 +1,17 @@
+---
+- name: Install Nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+
+- name: Configure Nginx  default site
+  ansible.builtin.template:
+    src: default.conf.j2
+    dest: /etc/nginx/sites-available/default
+  notify: Restart Nginx
+
+- name: Ensure Nginx is running
+  ansible.builtin.systemd_service:
+    name: nginx
+    enabled: true
+    state: started

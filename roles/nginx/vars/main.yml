@@ -1,0 +1,3 @@
+server_port: 80
+document_root: /var/www/html
+php_socket: "/run/php/php-fpm.sock"

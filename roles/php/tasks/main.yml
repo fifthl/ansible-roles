@@ -1,0 +1,23 @@
+---
+- name: Load OS variables
+  ansible.builtin.include_vars:
+    file: "{{ ansible_facts['distribution'] }}.yml"
+- name: Install PHP and FPM
+  ansible.builtin.apt:
+    name: "{{ php_packages }}"
+    state: present
+    update_cache: yes
+
+- name: Start PHP-FPM service
+  ansible.builtin.systemd_service:
+    name: "{{ php_service_name }}"
+    state: started
+    enabled: true
+
+- name: Create a test php file
+  ansible.builtin.template:
+    src: index.php.j2
+    dest: /var/www/html/info.php
+    mode: "0644"
+
+# 增加一个 handle

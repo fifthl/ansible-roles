@@ -1,0 +1,9 @@
+---
+# Debian 12 (Bookworm) 默认可能是 8.2，或者你想用默认别名
+php_packages:
+  - php8.3-fpm
+  - php8.3-mysql
+  - php8.3-xml
+
+php_service_name: "php8.3-fpm"
+php_socket: "/run/php/php8.3-fpm.sock"

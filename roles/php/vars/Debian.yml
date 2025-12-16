@@ -1,0 +1,7 @@
+php_packages:
+- php-fpm
+- php-mysql
+- php-xml
+
+php_service_name: "php8.4-fpm"
+php_socket: "/run/php/php-fpm.sock"
