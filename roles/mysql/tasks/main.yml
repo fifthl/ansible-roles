@@ -17,6 +17,6 @@
     enabled: true
     state: started
     name: "{{ item }}"
-  loop:
+  loop:  # 测试一下循环
   - mysql
   - nginx
