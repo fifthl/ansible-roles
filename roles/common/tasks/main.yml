@@ -1,0 +1,4 @@
+---
+- name: Common Load OS variables 
+  ansible.builtin.include_vars:
+    file: "{{ ansible_facts['distribution'] }}.yml"

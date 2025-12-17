@@ -2,7 +2,11 @@
 - name: Deploy Nginx and PHP
   hosts: webServer
   user: root
+  vars:
+    ansible_python_interpreter: "/usr/bin/python3"
 
   roles:
+  - role: common
   - role: php
-  - role: nginx 
+  - role: nginx
+  - role: mysql

@@ -1,0 +1,16 @@
+---
+# PHP
+php_packages:
+  - php8.3-fpm
+  - php8.3-mysql
+  - php8.3-xml
+php_service_name: "php8.3-fpm"
+php_socket: "/run/php/php-fpm.sock"
+
+# MySQL
+mysql_client_version: "8.0"
+mysql_server_version: "8.0"
+
+# Nginx
+server_port: 80
+document_root: /var/www/html
