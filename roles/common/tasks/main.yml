@@ -2,3 +2,7 @@
 - name: Common Load OS variables 
   ansible.builtin.include_vars:
     file: "{{ ansible_facts['distribution'] }}.yml"
+
+- name: Re-read facts after adding custom fact
+  ansible.builtin.setup:
+    filter: ansible_local

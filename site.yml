@@ -4,6 +4,7 @@
   user: root
   vars:
     ansible_python_interpreter: "/usr/bin/python3"
+  # gather_facts: false
 
   roles:
   - role: common
